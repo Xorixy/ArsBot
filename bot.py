@@ -99,7 +99,7 @@ async def roll_botch(botch, user, channel):
         await channel.send("Error: number of botch dice must be a positive integer")
         return
     if botch == 1:
-        message += "{user} rolling 1 botch die\n"
+        message += f"{user} rolling 1 botch die\n"
     else:
         message += f"{user} rolling {botch} botch dice\n"
     botches = 0

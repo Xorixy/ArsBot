@@ -78,9 +78,9 @@ async def roll_normal(num, modifier, user, channel):
         await channel.send("Error: modifier must be an integer")
         return
     if num == 1:
-        message += f"Rolling 1 normal die with modifier {modifier}\n"
+        message += f"{user} rolling 1 normal die with modifier {modifier}\n"
     else:
-        message += f"Rolling {num} normal dice with modifier {modifier}\n"
+        message += f"{user} rolling {num} normal dice with modifier {modifier}\n"
     for _ in range(num):
         roll = random.randrange(10) + 1
         message += f"{user} rolled a normal die: {roll} + {modifier} = {roll + modifier}\n"
@@ -99,9 +99,9 @@ async def roll_botch(botch, user, channel):
         await channel.send("Error: number of botch dice must be a positive integer")
         return
     if botch == 1:
-        message += "Rolling 1 botch die\n"
+        message += "{user} rolling 1 botch die\n"
     else:
-        message += f"Rolling {botch} botch dice\n"
+        message += f"{user} rolling {botch} botch dice\n"
     botches = 0
     for __ in range(botch):
         if random.randrange(10) == 0:
